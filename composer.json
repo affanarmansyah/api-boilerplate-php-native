@@ -1,0 +1,15 @@
+{
+    "name": "affan/blog-ratih-api",
+    "authors": [
+        {
+            "name": "Your Name",
+            "email": "affanarmansyah17@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "require": {}
+}
