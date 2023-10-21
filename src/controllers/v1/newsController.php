@@ -1,22 +1,43 @@
 <?php
 
-namespace src\controllers\v1;
+namespace src\controllers\v1; // Ubah namespace menjadi src\controllers
 
 use src\controllers\component\DefaultController;
+use src\models\NewsModel;
 
 class NewsController extends DefaultController
 {
     public function list()
     {
-        http_response_code(200);
+        $model = new NewsModel();
 
-        echo json_encode(["message" => "list succsess"]);
+        // secara default ketika tidak ada filter 
+        $newsData = $model->list(1, "", 10);
+
+        // ketika ada filter yang di request
+        if (!empty($_GET)) {
+            $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : "";
+            $page = isset($_GET['page']) ? $_GET['page'] : 1;
+            $limit = isset($_GET['limit']) ? $_GET['limit'] : 10;
+
+            $newsData = $model->list($page, $keyword, $limit);
+        }
+
+        return $newsData;
     }
 
     public function detail()
     {
-        http_response_code(200);
+        return ["message" => "detail"];
+    }
 
-        echo json_encode(["message" => "detail succsess"]);
+    public function create()
+    {
+        return ["message" => $_POST];
+    }
+
+    public function edit()
+    {
+        return ["message" => "edit"];
     }
 }

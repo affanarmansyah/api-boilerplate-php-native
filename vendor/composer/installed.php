@@ -1,6 +1,6 @@
 <?php return array(
     'root' => array(
-        'name' => 'affan/blog-ratih-api',
+        'name' => 'affan/test-api',
         'pretty_version' => '1.0.0+no-version-set',
         'version' => '1.0.0.0',
         'reference' => NULL,
@@ -10,7 +10,7 @@
         'dev' => true,
     ),
     'versions' => array(
-        'affan/blog-ratih-api' => array(
+        'affan/test-api' => array(
             'pretty_version' => '1.0.0+no-version-set',
             'version' => '1.0.0.0',
             'reference' => NULL,
